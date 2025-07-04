@@ -2,7 +2,6 @@
 import React from 'react';
 import { Mail, Github, Linkedin } from 'lucide-react';
 import profilePic from '../assets/profile.jpg';
-import resumePdf from '../assets/saswat.pdf';
 
 export default function Hero() {
   return (
@@ -40,7 +39,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-4 text-lg md:text-2xl text-gray-700 dark:text-gray-300">
-          Full-Stack Developer & AI/ML Enthusiast<br/>
+          Full-Stack Developer & AI/ML Enthusiast<br />
           Crafting scalable apps and intelligent systems
         </p>
 
@@ -53,7 +52,7 @@ export default function Hero() {
             Get in Touch
           </a>
           <a
-            href={resumePdf}
+            href={`${process.env.PUBLIC_URL}/saswat.pdf`}
             download="Saswat_Pandey_Resume.pdf"
             className="inline-flex items-center px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white
                        rounded-full font-semibold shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition"
