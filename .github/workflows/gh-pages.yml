@@ -3,18 +3,18 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main    # or whatever branch you use to store source
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
-          persist-credentials: true  # so the token is available for deployment
+          persist-credentials: true  # makes the token available via git
 
-      - name: Setup Node.js
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18.x'
@@ -25,7 +25,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Configure git for HTTPS push
+        run: |
+          # Switch origin to use the GITHUB_TOKEN over HTTPS
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
       - name: Deploy to GitHub Pages
-        run: npm run deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}    # for gh-pages package auth
+        run: npm run deploy
