@@ -1,70 +1,159 @@
-# Getting Started with Create React App
+```markdown
+# Saswat Pandey’s Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<span align="center">  
+🔗 Live Site: https://saswat555.github.io/portfolio  
+📄 Download Resume: [saswat.pdf](./saswat.pdf)  
+</span>
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 👋 About Me
 
-### `npm start`
+I’m **Saswat Pandey**, a Full-Stack Engineer & AI Product Developer based in Bangalore, India.  
+- **Email:** saswatp99@gmail.com  
+- **Phone:** +91 91204 08657  
+- **GitHub:** [@saswat555](https://github.com/saswat555)  
+- **LinkedIn:** [saswat-pandey](https://linkedin.com/in/saswat-pandey) :contentReference[oaicite:6]{index=6}  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Professional Summary**  
+> Expert in frontend (React, Next.js) and backend (C#, .NET, Python, Node.js), I’ve  
+> shipped the first generative-AI features in Epicor’s ECM suite—designing C#/.NET  
+> services, integrating LLM pipelines, and delivering sub-300 ms semantic search.  
+> Previous roles include IoT/data platforms at startups and training 200+ professionals  
+> on AWS, Salesforce, and ServiceNow. :contentReference[oaicite:7]{index=7}
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Dynamic Hero** with animated AI-style blobs & rings  
+- **Light/Dark Theme** toggle globally (persisted via `localStorage`)  
+- **Featured Highlights** showcasing key projects (RAG System, Predictive Data Entry, Spintrip)  
+- **Experience Timeline** (Academic & Professional) with icons, animations & alternate layouts  
+- **Projects Carousel** with detailed cards, tech badges, GitHub links & star counts  
+- **Skills Accordion** across 6 categories (Data Science, Frontend, Programming, Backend, DevOps, Soft Skills)  
+- **Contact Form** with icon-enhanced fields, focus rings & animated submit button  
+- **Responsive** design (mobile ↔ desktop), built with React + Tailwind CSS + Lucide icons  
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend:** React 18, Tailwind CSS, Lucide React Icons  
+- **Animations:** CSS keyframes, Tailwind transitions & transforms  
+- **Build & Deployment:** Create React App, GitHub Pages  
+- **AI / Data:** LangChain, Apache Solr (RAG), TensorFlow / PyTorch, HuggingFace, LightGBM, ARIMA  
+- **Backend (EPICOR):** C#/.NET, Azure Service Bus, Redis Streams, gRPC  
+- **CI/CD & Hosting:** GitHub Actions, Docker, AWS (EC2, S3, Lambda), Azure OpenAI  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📦 Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone** this repo  
+   ```bash
+   git clone https://github.com/saswat555/portfolio.git
+   cd portfolio
+````
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Install** dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Run** in development
 
-## Learn More
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   Open [http://localhost:3000](http://localhost:3000).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Build** for production
 
-### Code Splitting
+   ```bash
+   npm run build
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. **Deploy** to GitHub Pages
 
-### Analyzing the Bundle Size
+   ```bash
+   npm run deploy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🗂️ Repository Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+portfolio/
+├── public/
+│   ├── saswat.pdf         # Resume (download link)
+│   └── index.html
+└── src/
+    ├── assets/            # Images & media
+    ├── components/
+    │   ├── Nav.jsx
+    │   ├── Hero.jsx
+    │   ├── FeaturedHighlights.jsx
+    │   ├── ExperienceSection.jsx
+    │   ├── ProjectsSection.jsx
+    │   ├── ProjectCard.jsx
+    │   ├── SkillsSection.jsx
+    │   ├── ContactForm.jsx
+    │   └── Footer.jsx
+    ├── App.jsx            # Central router
+    ├── index.js
+    └── tailwind.config.js
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🎓 Education
 
-### Deployment
+* **B.Tech, Information Science**
+  CMR Institute of Technology, Bangalore (2019–2023) — CGPA 8.2/10, Distinction;
+  Thesis: AI-Driven Warehouse Management (Intercessor)&#x20;
+* **Higher Secondary (CBSE)**, JVM Shyamali, Ranchi (2018)&#x20;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🏆 Certifications & Courses
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Scale AI** — RLHF Trainer Program (2024)
+* **AWS Certified Solutions Architect – Associate**
+* **Salesforce Certified Administrator**
+* **ServiceNow Certified System Administrator**
+* **DeepLearning.AI** — Deep Learning Specialization
+* **Coursera (HKU)** — Full-Stack Web Development
+
+---
+
+## 📚 Selected Projects
+
+* **RAG System on Apache Solr** — Hybrid lexical/vector retrieval + GPT-4o integrations
+* **Predictive Data Entry** — ML-driven autofill for Epicor ERP, reducing errors by 25%
+* **Spintrip** — Full-stack IoT travel platform (Flutter, Node.js, MongoDB, Stripe)
+* **Intercessor** — ARIMA forecasting + alerts for perishable goods (Flask, TensorFlow)
+* **Plant Disease Detection** — CNN classifier deployed via Flask REST API
+* **LLM Fine-tuning** — LoRA & QLoRA on domain corpora, optimized serving on SageMaker
+
+---
+
+## 🤝 Contact
+
+Feel free to open an issue or PR, or reach out directly via email or LinkedIn!
+
+---
+
+*Built with ❤️ by Saswat Pandey*
+
+```
+
+This README:
+
+- **Highlights** your professional summary, education, certifications, and contact info directly from your resume :contentReference[oaicite:10]{index=10}.  
+- **Documents** all key sections and how to run, build, and deploy the portfolio.  
+- **Showcases** your AI/ML expertise and engineering impact.
