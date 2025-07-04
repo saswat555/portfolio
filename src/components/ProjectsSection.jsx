@@ -1,4 +1,3 @@
-// src/components/ProjectsSection.jsx
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ProjectCard from './ProjectCard';
@@ -14,123 +13,112 @@ import elasticImg from '../assets/elasticsearch.jpg';
 const projects = [
   {
     name: 'Intercessor',
-    description: 'Smart warehouse insights: perishable-goods forecasting & automated restocking alerts.',
+    description: 'Perishable-goods forecasting & restocking alerts.',
     tech: ['Flask','TensorFlow','MongoDB','ARIMA'],
     github: 'https://github.com/saswat555/intercessor',
     stars: 102,
-    forks: 4,
     image: intercessorImg
   },
   {
     name: 'Plant Disease Detection',
-    description: 'CNN-powered crop disease classifier deployed as a Flask REST API.',
+    description: 'CNN crop disease classifier as Flask REST API.',
     tech: ['TensorFlow','Keras','OpenCV','Python'],
     github: 'https://github.com/saswat555/plant-disease-model',
     stars: 89,
-    forks: 2,
     image: plantDiseaseImg
   },
   {
     name: 'LLM Fine-tuning',
-    description: 'LoRA & QLoRA on domain corpora, hosted on SageMaker for low-cost inference.',
+    description: 'LoRA & QLoRA on domain corpora via SageMaker.',
     tech: ['HuggingFace','PyTorch','LoRA','SageMaker'],
     github: 'https://github.com/saswat555/llmfinetuning',
     stars: 45,
-    forks: 3,
     image: llmTuningImg
   },
   {
     name: 'Hydroleaf Suite',
-    description: 'Full‐stack crop analytics: FastAPI backend, Angular web, Flutter mobile, plus TF forecasting.',
+    description: 'Full-stack crop analytics: FastAPI, Angular, Flutter.',
     tech: ['FastAPI','Angular','Flutter','TensorFlow'],
     github: 'https://github.com/saswat555/hydroleaf',
     stars: 67,
-    forks: 5,
     image: hydroleafImg
   },
   {
     name: 'Mercor Platform',
-    description: 'Trial booking flow with Flask backend & vanilla JS frontend—robust data validations.',
+    description: 'Flask + Vanilla JS trial booking flow.',
     tech: ['Flask','JavaScript','HTML','CSS'],
     github: 'https://github.com/saswat555/mercor_frontend',
     stars: 12,
-    forks: 1,
     image: mercorImg
   },
   {
-    name: 'Frontend Medusa',
-    description: 'Custom e-commerce storefront on Medusa.js, React & Tailwind CSS.',
+    name: 'Medusa Storefront',
+    description: 'E-commerce front on Medusa.js & React.',
     tech: ['Medusa.js','React','TypeScript','Tailwind'],
     github: 'https://github.com/saswat555/frontend-medusa',
     stars: 20,
-    forks: 4,
     image: medusaImg
   },
   {
     name: 'Elasticsearch CRUD',
-    description: 'Dockerized microservice demonstrating full Elasticsearch CRUD via Python.',
+    description: 'Dockerized service for full ES CRUD in Python.',
     tech: ['Elasticsearch','Docker','Python'],
     github: 'https://github.com/saswat555/elastic_search_crud',
     stars: 15,
-    forks: 2,
     image: elasticImg
   }
 ];
 
 export default function ProjectsSection() {
   const [current, setCurrent] = useState(0);
-  const length = projects.length;
+  const len = projects.length;
 
-  const prev = () => setCurrent((current - 1 + length) % length);
-  const next = () => setCurrent((current + 1) % length);
+  const prev = () => setCurrent((c) => (c - 1 + len) % len);
+  const next = () => setCurrent((c) => (c + 1) % len);
 
   return (
-    <section id="projects" className="py-16">
-      <h2 className="text-3xl font-bold text-center mb-2">Projects</h2>
-      <p className="text-center text-gray-400 mb-8">
-        My independent projects & contributions
-      </p>
+    <div className="relative">
+      {/* Arrows */}
+      <button
+        onClick={prev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-indigo-600 dark:bg-indigo-500 text-white rounded-full
+                   hover:bg-indigo-700 dark:hover:bg-indigo-400 transition"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={next}
+        className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-indigo-600 dark:bg-indigo-500 text-white rounded-full
+                   hover:bg-indigo-700 dark:hover:bg-indigo-400 transition"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
 
-      <div className="relative max-w-4xl mx-auto">
-        {/* Left arrow */}
-        <button
-          onClick={prev}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-indigo-600 rounded-full hover:bg-indigo-700 transition"
-        >
-          <ChevronLeft className="w-6 h-6 text-white" />
-        </button>
-
-        {/* Carousel slide */}
-        {projects.map((proj, idx) => (
+      {/* Carousel */}
+      <div className="overflow-hidden">
+        {projects.map((proj, i) => (
           <div
             key={proj.name}
-            className={`transition-all duration-500 ${idx === current ? 'block' : 'hidden'}`}
+            className={`transition-transform duration-500 ${
+              i === current ? 'translate-x-0' : i < current ? '-translate-x-full' : 'translate-x-full'
+            }`}
           >
             <ProjectCard project={proj} />
           </div>
         ))}
-
-        {/* Right arrow */}
-        <button
-          onClick={next}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-indigo-600 rounded-full hover:bg-indigo-700 transition"
-        >
-          <ChevronRight className="w-6 h-6 text-white" />
-        </button>
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center space-x-2 mt-6">
-        {projects.map((_, idx) => (
+      <div className="flex justify-center gap-2 mt-6">
+        {projects.map((_, i) => (
           <button
-            key={idx}
-            onClick={() => setCurrent(idx)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              idx === current ? 'bg-indigo-600' : 'bg-gray-500'
-            }`}
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-3 h-3 rounded-full transition-colors
+                       ${i === current ? 'bg-indigo-600 dark:bg-indigo-400' : 'bg-gray-400'}`}
           />
         ))}
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,26 +1,59 @@
-// src/components/FeaturedHighlights.jsx
-import React from 'react';
+import { Code, Database, Rocket } from 'lucide-react';
 
-const featuredProjects = [
-  { name: 'RAG System on Apache Solr', description: 'Hybrid retrieval + LLM context', tech: ['Solr','Python','OpenAI'] },
-  { name: 'Predictive Data Entry',         description: 'ML autocomplete for Epicor', tech: ['Flask','JS','XGBoost'] },
-  { name: 'Spintrip Platform',            description: 'End-to-end travel booking',   tech: ['Angular','Node.js','MongoDB'] }
+const featured = [
+  {
+    name: 'RAG System on Apache Solr',
+    description: 'Hybrid retrieval with LLM context assembly',
+    tech: ['Solr', 'Python', 'OpenAI'],
+    Icon: Database
+  },
+  {
+    name: 'Predictive Data Entry',
+    description: 'ML autocomplete extension for Epicor ERP',
+    tech: ['Flask', 'JavaScript', 'XGBoost'],
+    Icon: Code
+  },
+  {
+    name: 'Spintrip Platform',
+    description: 'End-to-end travel booking workflow',
+    tech: ['Angular', 'Node.js', 'MongoDB', 'Stripe API'],
+    Icon: Rocket
+  }
 ];
 
 export default function FeaturedHighlights() {
   return (
-    <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-      {featuredProjects.map(fp => (
-        <div key={fp.name} className="p-6 bg-gray-800 rounded shadow">
-          <h3 className="text-lg font-semibold mb-2">{fp.name}</h3>
-          <p className="text-gray-400 mb-3">{fp.description}</p>
+    <section className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+      {featured.map(({ name, description, tech, Icon }) => (
+        <div
+          key={name}
+          className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg
+                     transform transition-transform duration-300
+                     hover:scale-105"
+        >
+          <div className="flex items-center space-x-3 mb-4">
+            <Icon className="w-8 h-8 text-indigo-600 dark:text-indigo-400 animate-bounce-slow" />
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+              {name}
+            </h3>
+          </div>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">
+            {description}
+          </p>
           <div className="flex flex-wrap gap-2">
-            {fp.tech.map(t => (
-              <span key={t} className="text-xs bg-cyan-500/20 px-2 py-1 rounded">{t}</span>
+            {tech.map((t) => (
+              <span
+                key={t}
+                className="px-3 py-1 bg-gradient-to-r from-indigo-100 to-indigo-200
+                           dark:from-gray-700 dark:to-gray-600
+                           text-indigo-600 dark:text-indigo-300 text-xs rounded-full"
+              >
+                {t}
+              </span>
             ))}
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 }

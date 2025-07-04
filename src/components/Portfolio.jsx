@@ -7,33 +7,34 @@ import ProjectsSection from './ProjectsSection';
 import SkillsSection from './SkillsSection';
 import ContactForm from './ContactForm';
 import Footer from './Footer';
+
 export default function Portfolio() {
   const [page, setPage] = useState('home');
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      {/* Navigation bar */}
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
       <Nav currentPage={page} setCurrentPage={setPage} />
 
-      {/* Hero section */}
+      {/* Hero */}
       {page === 'home' && <Hero />}
 
-      {/* Main content */}
-      <main className="pt-20 px-4 max-w-4xl mx-auto space-y-20">
+      {/* Main */}
+      <main className="pt-20 px-4 max-w-6xl mx-auto space-y-20">
         {page === 'home' && (
           <>
             <FeaturedHighlights />
             <ExperienceSection />
           </>
         )}
+
         {page === 'about' && (
           <>
-            <section id="about" className="space-y-4">
+            <section id="about" className="space-y-6">
               <h2 className="text-4xl font-bold">About Me</h2>
-              <p className="text-gray-300 leading-relaxed">
-                I’m Saswat Pandey, a versatile full-stack engineer and AI/ML practitioner.
-                I’ve built enterprise-grade platforms, custom RAG systems on Solr, and
-                predictive data-entry tools for ERPs.
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                I’m Saswat Pandey—a full-stack developer & AI/ML practitioner. I’ve
+                architected scalable web platforms, custom RAG systems on Solr, and
+                predictive data-entry tools for enterprise ERPs.
               </p>
             </section>
             <ExperienceSection />
@@ -41,15 +42,15 @@ export default function Portfolio() {
         )}
 
         {page === 'projects' && (
-          <section id="projects">
-            <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
+          <section id="projects" className="space-y-8">
+            <h2 className="text-4xl font-bold text-center">Projects</h2>
             <ProjectsSection />
           </section>
         )}
 
         {page === 'skills' && (
-          <section id="skills">
-            <h2 className="text-4xl font-bold mb-8 text-center">Skills</h2>
+          <section id="skills" className="space-y-8">
+            <h2 className="text-4xl font-bold text-center">Skills</h2>
             <SkillsSection />
           </section>
         )}
@@ -62,8 +63,9 @@ export default function Portfolio() {
             </div>
           </section>
         )}
-         <Footer />
       </main>
+
+      <Footer />
     </div>
   );
 }
