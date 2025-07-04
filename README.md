@@ -1,4 +1,3 @@
-```markdown
 # Saswat Pandey’s Portfolio
 
 <span align="center">  
@@ -150,7 +149,6 @@ Feel free to open an issue or PR, or reach out directly via email or LinkedIn!
 
 *Built with ❤️ by Saswat Pandey*
 
-```
 
 This README:
 
